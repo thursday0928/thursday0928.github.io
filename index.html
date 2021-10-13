@@ -131,7 +131,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -181,6 +181,81 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/13/%E5%8A%9B%E6%89%A3HOT-100-%E7%94%9F%E6%88%90%E6%8B%AC%E5%8F%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="星湖鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星湖鱼的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/13/%E5%8A%9B%E6%89%A3HOT-100-%E7%94%9F%E6%88%90%E6%8B%AC%E5%8F%B7/" class="post-title-link" itemprop="url">力扣HOT-100-生成括号</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-13 20:22:52 / 修改时间：20:26:15" itemprop="dateCreated datePublished" datetime="2021-10-13T20:22:52+08:00">2021-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。<br>有效括号组合需满足：左括号必须以正确的顺序闭合。<br>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/generate-parentheses/">https://leetcode-cn.com/problems/generate-parentheses/</a></p>
+<p>此题的关键在于1.使用回溯，2.在加入括号的时候判断其合法性。<br>暴力方法是：找出所有可能的组合，再判断其合法性。（不推荐）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generateParenthesis</span>(<span class="params">self, n: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">str</span>]:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        括号生成</span></span><br><span class="line"><span class="string">        :param n:括号对数，一对包含左括号和右括号</span></span><br><span class="line"><span class="string">        :return:</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        res = []</span><br><span class="line">        path = []</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">backtrace</span>(<span class="params">left, right</span>):</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(path) == <span class="number">2</span> * n:</span><br><span class="line">                res.append(<span class="string">&#x27;&#x27;</span>.join(path))</span><br><span class="line">                <span class="built_in">print</span>(path)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">if</span> left - right &gt; <span class="number">0</span>:</span><br><span class="line">                path.append(<span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">                backtrace(left, right + <span class="number">1</span>)</span><br><span class="line">                path.pop()</span><br><span class="line">            <span class="keyword">if</span> left &lt; n:</span><br><span class="line">                path.append(<span class="string">&#x27;(&#x27;</span>)</span><br><span class="line">                backtrace(left + <span class="number">1</span>, right)</span><br><span class="line">                path.pop()</span><br><span class="line"></span><br><span class="line">        backtrace(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -902,99 +977,6 @@
 <p>诸神之黄昏：2021年以后的互联网及新兴行业<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/8OLcpiKshn7v7JMtxsPF4Q">https://mp.weixin.qq.com/s/8OLcpiKshn7v7JMtxsPF4Q</a></p>
 <p>netease的airtest文档太人性化了，几乎给出了所有配置环境时可能遇到的问题参考<br><a target="_blank" rel="noopener" href="https://airtest.doc.io.netease.com/IDEdocs/device_connection/4_ios_connection/">https://airtest.doc.io.netease.com/IDEdocs/device_connection/4_ios_connection/</a></p>
 <p>为什么Python 3.6以后字典有序并且效率更高？<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/73426505">https://zhuanlan.zhihu.com/p/73426505</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/12/%E4%B8%80%E4%B8%AA%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84hexo%E6%90%AD%E5%BB%BA%E9%97%AD%E5%9D%91%E6%8C%87%E5%8D%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avator.jpg">
-      <meta itemprop="name" content="星湖鱼">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="星湖鱼的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/12/%E4%B8%80%E4%B8%AA%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84hexo%E6%90%AD%E5%BB%BA%E9%97%AD%E5%9D%91%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">一个比较全的hexo搭建避坑指南</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-04-12 22:33:34" itemprop="dateCreated datePublished" datetime="2021-04-12T22:33:34+08:00">2021-04-12</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-14 13:44:03" itemprop="dateModified" datetime="2021-04-14T13:44:03+08:00">2021-04-14</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>hexo是比较经典且易用的建站工具。可以直接以github为载体，免去申请服务器的步骤。hexo使用markdown解析文章，非常简单好用。<br>中文文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
-<p><strong>首先，要在本地和github建立链接。</strong><br>这里可以参考这篇来配置：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018250408">https://segmentfault.com/a/1190000018250408</a><br>这篇文章避开了 <strong>一个坑。</strong> 那就是：<br>如果按照hexo文档中配置git仓库的方法，也就是repo：<a target="_blank" rel="noopener" href="https://github.com/username/project">https://github.com/username/project</a> 的方式是会失败的。<br>因为我们一般配置的时候，使用的是ssh公钥，也就是repo: <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#109;</a>:username/username.github.io.git 用这个方式才能配置成功。然后就是注意，branch不是文档中的master，而一般是main。。。这个大家懂得背景。<br>创建SSH公钥可以参考这篇：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2625e66bb2b2">https://www.jianshu.com/p/2625e66bb2b2</a><br>在使用 ssh-keygen -t rsa -C “github账号的邮箱” 时出现<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/xxxx/.ssh/id_rsa):<br><strong>这里直接按enter，不要新建一个file了，如果使用新建的file里面的公钥，会链接失败。。会失败。</strong></p>
-<p>按照文档中的提示，创建文件夹，开始hexo init。这里没有什么坑。</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>然后以next这个主题为例，说一下如何配置主题。<br>next中文文档：<a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/getting-started.html">https://theme-next.iissnan.com/getting-started.html</a><br>或者：<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/posts">https://theme-next.js.org/docs/theme-settings/posts</a></p>
-<p>在执行以下命令的时候，<strong>git clone后面还是用ssh链接的好</strong>，因为有时候会发现https下载很慢很难成功。</p>
-<pre><code>$ cd your-hexo-site
-$ git clone https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre>
-<p><strong>上述语句后面的themes/next千万不要丢了。</strong> 我因为路径配置错，导致后面的配置死活不生效。</p>
-<h2 id="Git链接hexo"><a href="#Git链接hexo" class="headerlink" title="Git链接hexo"></a>Git链接hexo</h2><p>git链接hexo需要安装：</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre>
-<p>不然是无法推送到远端仓库上去的哦。</p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>后续会补充一些Windows上的注意事项。</p>
 
       
     </div>
