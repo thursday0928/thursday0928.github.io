@@ -20,27 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Pisces&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script>
-<meta name="description" content="CTS框架解析https:&#x2F;&#x2F;testerhome.com&#x2F;topics&#x2F;1808 2021年9.10日，全球软件质量&amp;效能大会可以先看看议题和材料http:&#x2F;&#x2F;www.qecon.net&#x2F; 美团App页面视图可测性改造实践https:&#x2F;&#x2F;tech.meituan.com&#x2F;2021&#x2F;07&#x2F;28&#x2F;app-xraysdk.html">
+<meta name="description" content="题目链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;search-in-rotated-sorted-array&#x2F;描述：整数数组 nums 按升序排列，数组中的值互不相同 。 在传递给函数之前，nums 在预先未知的某个下标 k（0 &lt;&#x3D; k &lt; nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], …, nums[n-1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八月第二周周刊">
-<meta property="og:url" content="http://example.com/2021/08/15/%E5%85%AB%E6%9C%88%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E5%88%8A/index.html">
+<meta property="og:title" content="力扣HOT-100-搜索旋转排序数组">
+<meta property="og:url" content="http://example.com/2021/10/21/%E5%8A%9B%E6%89%A3HOT-100-%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="星湖鱼的博客">
-<meta property="og:description" content="CTS框架解析https:&#x2F;&#x2F;testerhome.com&#x2F;topics&#x2F;1808 2021年9.10日，全球软件质量&amp;效能大会可以先看看议题和材料http:&#x2F;&#x2F;www.qecon.net&#x2F; 美团App页面视图可测性改造实践https:&#x2F;&#x2F;tech.meituan.com&#x2F;2021&#x2F;07&#x2F;28&#x2F;app-xraysdk.html">
+<meta property="og:description" content="题目链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;search-in-rotated-sorted-array&#x2F;描述：整数数组 nums 按升序排列，数组中的值互不相同 。 在传递给函数之前，nums 在预先未知的某个下标 k（0 &lt;&#x3D; k &lt; nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], …, nums[n-1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-15T14:19:46.000Z">
-<meta property="article:modified_time" content="2021-08-15T14:31:24.007Z">
+<meta property="article:published_time" content="2021-10-21T03:23:46.000Z">
+<meta property="article:modified_time" content="2021-10-21T04:41:33.364Z">
 <meta property="article:author" content="星湖鱼">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/08/15/%E5%85%AB%E6%9C%88%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E5%88%8A/">
+<link rel="canonical" href="http://example.com/2021/10/21/%E5%8A%9B%E6%89%A3HOT-100-%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;08&#x2F;15&#x2F;%E5%85%AB%E6%9C%88%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E5%88%8A&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;08&#x2F;15&#x2F;八月第二周周刊&#x2F;&quot;,&quot;title&quot;:&quot;八月第二周周刊&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;10&#x2F;21&#x2F;%E5%8A%9B%E6%89%A3HOT-100-%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;10&#x2F;21&#x2F;力扣HOT-100-搜索旋转排序数组&#x2F;&quot;,&quot;title&quot;:&quot;力扣HOT-100-搜索旋转排序数组&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>八月第二周周刊 | 星湖鱼的博客</title><script src="/js/config.js"></script>
+<title>力扣HOT-100-搜索旋转排序数组 | 星湖鱼的博客</title><script src="/js/config.js"></script>
   
 
 
@@ -195,7 +196,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/15/%E5%85%AB%E6%9C%88%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E5%88%8A/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/21/%E5%8A%9B%E6%89%A3HOT-100-%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avator.jpg">
@@ -208,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          八月第二周周刊
+          力扣HOT-100-搜索旋转排序数组
         </h1>
 
         <div class="post-meta-container">
@@ -220,7 +221,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-08-15 22:19:46 / 修改时间：22:31:24" itemprop="dateCreated datePublished" datetime="2021-08-15T22:19:46+08:00">2021-08-15</time>
+      <time title="创建时间：2021-10-21 11:23:46 / 修改时间：12:41:33" itemprop="dateCreated datePublished" datetime="2021-10-21T11:23:46+08:00">2021-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -228,7 +229,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%91%A8%E5%88%8A/" itemprop="url" rel="index"><span itemprop="name">周刊</span></a>
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
         </span>
     </span>
 
@@ -242,9 +243,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>CTS框架解析<br><a target="_blank" rel="noopener" href="https://testerhome.com/topics/1808">https://testerhome.com/topics/1808</a></p>
-<p>2021年9.10日，全球软件质量&amp;效能大会<br>可以先看看议题和材料<br><a target="_blank" rel="noopener" href="http://www.qecon.net/">http://www.qecon.net/</a></p>
-<p>美团App页面视图可测性改造实践<br><a target="_blank" rel="noopener" href="https://tech.meituan.com/2021/07/28/app-xraysdk.html">https://tech.meituan.com/2021/07/28/app-xraysdk.html</a></p>
+        <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">https://leetcode-cn.com/problems/search-in-rotated-sorted-array/</a><br>描述：<br>整数数组 nums 按升序排列，数组中的值互不相同 。</p>
+<p>在传递给函数之前，nums 在预先未知的某个下标 k（0 &lt;= k &lt; nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], …, nums[n-1], nums[0], nums[1], …, nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。</p>
+<p>给你 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。</p>
+<p><strong>解析思路：</strong></p>
+<p>将数组一分为二，其中一定有一个是有序的，另一个可能是有序，也能是部分有序。此时有序部分用二分法查找。无序部分再一分为二，其中一个一定有序，另一个可能有序，可能无序。如此循环。</p>
+<p><strong>此题类似于一个变式的二分查找</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">            mid = (l + r) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] == target:</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">            <span class="keyword">if</span> nums[<span class="number">0</span>] &lt;= nums[mid]:</span><br><span class="line">                <span class="keyword">if</span> nums[<span class="number">0</span>] &lt;= target &lt; nums[mid]:</span><br><span class="line">                    r = mid - <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    l = mid + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> nums[mid] &lt; target &lt;= nums[<span class="built_in">len</span>(nums) - <span class="number">1</span>]:</span><br><span class="line">                    l = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    r = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
 
     </div>
 
@@ -253,19 +260,19 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/06/20/%E5%85%AD%E6%9C%88%E7%AC%AC%E4%B8%89%E5%91%A8%E5%91%A8%E5%88%8A/" rel="prev" title="六月第三周周刊">
-                  <i class="fa fa-chevron-left"></i> 六月第三周周刊
+                <a href="/2021/10/15/%E5%8A%9B%E6%89%A3HOT-100-%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/" rel="prev" title="力扣HOT-100-下一个排列">
+                  <i class="fa fa-chevron-left"></i> 力扣HOT-100-下一个排列
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/09/18/%E5%8F%AF%E8%83%BD%E6%98%AF%E5%85%A8%E7%BD%91%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84mac%E5%AE%89%E5%8D%93MySQL-Python%E6%8C%87%E5%8D%97/" rel="next" title="可能是全网最好用的mac安装MySQL-Python指南">
-                  可能是全网最好用的mac安装MySQL-Python指南 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
