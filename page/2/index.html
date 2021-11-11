@@ -131,7 +131,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -181,6 +181,88 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/11/%E5%8A%9B%E6%89%A3HOT-100-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E7%BB%84%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="星湖鱼">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星湖鱼的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/11/%E5%8A%9B%E6%89%A3HOT-100-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E7%BB%84%E5%90%88/" class="post-title-link" itemprop="url">力扣HOT-100-电话号码的组合</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-11 20:06:36 / 修改时间：20:20:22" itemprop="dateCreated datePublished" datetime="2021-10-11T20:06:36+08:00">2021-10-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。答案可以按 任意顺序 返回。</p>
+<p>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number">https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number</a></p>
+<p><em>本题是可以使用回溯或者队列来解决的一个问题，时间复杂度都略高- -，达到O(3^n)</em><br><strong>队列法：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">letterCombinations</span>(<span class="params">self, digits: <span class="built_in">str</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">str</span>]:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        电话号码的组合</span></span><br><span class="line"><span class="string">        :param digits:由2-9组成的字符串</span></span><br><span class="line"><span class="string">        :return:</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> digits:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        letter_map = [<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&quot;abc&quot;</span>, <span class="string">&quot;def&quot;</span>, <span class="string">&quot;ghi&quot;</span>, <span class="string">&quot;jkl&quot;</span>, <span class="string">&quot;mno&quot;</span>, <span class="string">&quot;pqrs&quot;</span>, <span class="string">&quot;tuv&quot;</span>, <span class="string">&quot;wxyz&quot;</span>]</span><br><span class="line">        res = [<span class="string">&#x27;&#x27;</span>]</span><br><span class="line">        <span class="keyword">for</span> dig <span class="keyword">in</span> digits:</span><br><span class="line">            letters = letter_map[<span class="built_in">ord</span>(dig) - <span class="number">48</span>]  <span class="comment"># ord(c)-48 是获取c的ASCII码然后-48,48是0的ASCII</span></span><br><span class="line">            <span class="keyword">for</span> resp <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(res)):</span><br><span class="line">                temp = res.pop(<span class="number">0</span>)</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> letters:</span><br><span class="line">                    res.append(temp + j)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<p><strong>回溯法：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">letterCombinations1</span>(<span class="params">self, digits: <span class="built_in">str</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">str</span>]:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;上面题目递归实现版&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> digits:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        letter_map = [<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&quot;abc&quot;</span>, <span class="string">&quot;def&quot;</span>, <span class="string">&quot;ghi&quot;</span>, <span class="string">&quot;jkl&quot;</span>, <span class="string">&quot;mno&quot;</span>, <span class="string">&quot;pqrs&quot;</span>, <span class="string">&quot;tuv&quot;</span>, <span class="string">&quot;wxyz&quot;</span>]</span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">tmp, index</span>):</span></span><br><span class="line">            <span class="keyword">if</span> index == <span class="built_in">len</span>(digits):</span><br><span class="line">                res.append(tmp)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            c = digits[index]</span><br><span class="line">            letters = letter_map[<span class="built_in">ord</span>(c) - <span class="number">48</span>]</span><br><span class="line">            <span class="keyword">for</span> letter <span class="keyword">in</span> letters:</span><br><span class="line">                dfs(tmp + letter, index + <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        dfs(<span class="string">&#x27;&#x27;</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -822,7 +904,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>hexo是比较经典且易用的建站工具。可以直接以github为载体，免去申请服务器的步骤。hexo使用markdown解析文章，非常简单好用。<br>中文文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
-<p><strong>首先，要在本地和github建立链接。</strong><br>这里可以参考这篇来配置：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018250408">https://segmentfault.com/a/1190000018250408</a><br>这篇文章避开了 <strong>一个坑。</strong> 那就是：<br>如果按照hexo文档中配置git仓库的方法，也就是repo：<a target="_blank" rel="noopener" href="https://github.com/username/project">https://github.com/username/project</a> 的方式是会失败的。<br>因为我们一般配置的时候，使用的是ssh公钥，也就是repo: <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>:username/username.github.io.git 用这个方式才能配置成功。然后就是注意，branch不是文档中的master，而一般是main。。。这个大家懂得背景。<br>创建SSH公钥可以参考这篇：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2625e66bb2b2">https://www.jianshu.com/p/2625e66bb2b2</a><br>在使用 ssh-keygen -t rsa -C “github账号的邮箱” 时出现<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/xxxx/.ssh/id_rsa):<br><strong>这里直接按enter，不要新建一个file了，如果使用新建的file里面的公钥，会链接失败。。会失败。</strong></p>
+<p><strong>首先，要在本地和github建立链接。</strong><br>这里可以参考这篇来配置：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018250408">https://segmentfault.com/a/1190000018250408</a><br>这篇文章避开了 <strong>一个坑。</strong> 那就是：<br>如果按照hexo文档中配置git仓库的方法，也就是repo：<a target="_blank" rel="noopener" href="https://github.com/username/project">https://github.com/username/project</a> 的方式是会失败的。<br>因为我们一般配置的时候，使用的是ssh公钥，也就是repo: <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:username/username.github.io.git 用这个方式才能配置成功。然后就是注意，branch不是文档中的master，而一般是main。。。这个大家懂得背景。<br>创建SSH公钥可以参考这篇：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2625e66bb2b2">https://www.jianshu.com/p/2625e66bb2b2</a><br>在使用 ssh-keygen -t rsa -C “github账号的邮箱” 时出现<br>Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/xxxx/.ssh/id_rsa):<br><strong>这里直接按enter，不要新建一个file了，如果使用新建的file里面的公钥，会链接失败。。会失败。</strong></p>
 <p>按照文档中的提示，创建文件夹，开始hexo init。这里没有什么坑。</p>
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>然后以next这个主题为例，说一下如何配置主题。<br>next中文文档：<a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/getting-started.html">https://theme-next.iissnan.com/getting-started.html</a><br>或者：<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/posts">https://theme-next.js.org/docs/theme-settings/posts</a></p>
 <p>在执行以下命令的时候，<strong>git clone后面还是用ssh链接的好</strong>，因为有时候会发现https下载很慢很难成功。</p>
@@ -915,71 +997,6 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next
     
     <div class="post-body" itemprop="articleBody">
           <p>2019年以前的文章链接在：<a target="_blank" rel="noopener" href="https://github.com/puwenxin/puwenxin.github.io">https://github.com/puwenxin/puwenxin.github.io</a><br>可惜啊，我就是想不起来密码了。。。<br>以后还是让自己多输出一些东西吧。<br>只有自己输出的时候，才是真正建立理解的开始。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/12/hexo%E6%88%91%E5%8F%88%E5%9B%9E%E6%9D%A5%E4%BA%86%EF%BC%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avator.jpg">
-      <meta itemprop="name" content="星湖鱼">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="星湖鱼的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/12/hexo%E6%88%91%E5%8F%88%E5%9B%9E%E6%9D%A5%E4%BA%86%EF%BC%81/" class="post-title-link" itemprop="url">hexo我又回来了！</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-04-12 12:03:52 / 修改时间：14:44:40" itemprop="dateCreated datePublished" datetime="2021-04-12T12:03:52+08:00">2021-04-12</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>原先git账号的密码忘了，，这个网站也被废弃了好久。。。但是现在我重新回来了。</p>
 
       
     </div>
